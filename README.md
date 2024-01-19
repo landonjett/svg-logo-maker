@@ -13,11 +13,11 @@ Generation of SVG files that can be used in various web projects.
 To install SVG Logo Maker, follow these steps:
 
 Clone the repository to your local machine:
-bash
+
 Copy code
 git clone [repository URL]
 Navigate to the cloned directory:
-bash
+
 Copy code
 cd svg-logo-maker
 Install the necessary dependencies:
@@ -38,7 +38,6 @@ You can open this SVG file in any web browser to view your generated logo.
 ## Testing
 This application uses Jest for unit testing. To run the tests, execute:
 
-bash
 Copy code
 npm test
 
