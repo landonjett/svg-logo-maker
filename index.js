@@ -28,23 +28,21 @@ async function createLogo() {
         }
     ]);
 
-    test('renders correctly with invalid color', () => {
-        const triangle = new Triangle();
-        const defaultColor = 'black'; // Assuming black is your default
-        expect(triangle.render()).toEqual(`<polygon points="150, 18 244, 182 56, 182" fill="${defaultColor}" />`);
-    });
-});
+    const shapeMap = {
+        Circle: Circle,
+        Triangle: Triangle,
+        Square: Square
+    };
 
-// Circle Tests
-describe('Circle', () => {
-    test('renders correctly with red color', () => {
-        const circle = new Circle('red');
-        expect(circle.render()).toEqual('<circle cx="150" cy="100" r="80" fill="red" />');
-    });
+    const shape = new shapeMap[answers.shape](answers.shapeColor);
+    const svgContent = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+                            ${shape.render()}
+                            <text x="150" y="125" font-size="60" text-anchor="middle" fill="${answers.textColor}">${answers.text}</text>
+                        </svg>`;
 
-    test('renders correctly with no color (default)', () => {
-        const circle = new Circle();
-        const defaultColor = 'black'; // Assuming black is your default
-        expect(circle.render()).toEqual(`<circle cx="150" cy="100" r="80" fill="${defaultColor}" />`);
-    });
-});
+    fs.writeFileSync('examples/logo.svg', svgContent);
+    console.log('Generated logo.svg');
+}
+
+createLogo();
+
