@@ -47,7 +47,7 @@ Inquirer.js - For command-line prompts
 Jest - For unit testing
 
 ## Walkthrough Video
-A walkthrough video demonstrating the functionality of the SVG Logo Maker can be found here.
+A walkthrough video demonstrating the functionality of the SVG Logo Maker can be found here - https://drive.google.com/file/d/1Ay7XwH58q0hG_f0LI6yJRyODcDHLO-vO/view
 
 ## Sample SVG
 An example of a generated SVG file using this application can be found in the examples directory.
